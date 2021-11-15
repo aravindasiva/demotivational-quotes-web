@@ -3,11 +3,12 @@ import {
   Flex,
   Divider,
   Stack,
-  Text,
-  useDisclosure
+  useDisclosure,
+  HStack
 } from "@chakra-ui/react"
 import React from "react"
-import { HamburgerIcon } from "@chakra-ui/icons"
+import { AiFillGithub } from "react-icons/ai"
+import Text, { TextStyles } from "../Text"
 
 
 export const SiteHeaderHeight = 80
@@ -24,38 +25,22 @@ const SiteHeader = () => {
           h="100%"
           justify='space-between'
           alignItems="center"
-          pr={{ base: 4, md: 10 }}
-          pl={{ base: 4, md: 10 }}
+          mt={8}
+          pr={{ base: 4, md: 16 }}
+          pl={{ base: 4, md: 16 }}
           color="black"
         >
           <Flex align="center" mr={2}>
-              <Text as={'a'} cursor="pointer" _hover={{ color: 'blue' }}>
-                Your Logo
+              <Text as={'a'} color='#1d1d1d' textStyle={TextStyles.title} fontSize={25} cursor="pointer" _hover={{ color: 'blue' }}>
+                Negative Space
               </Text>
           </Flex>
+          <Flex align="center" mr={2}>
+            <HStack spacing={2}>
+              <AiFillGithub size={20} color='white'/>
+            </HStack>
+          </Flex>
 
-          <Box display={{ base: "block", md: "none" }} onClick={handleToggle}>
-            <HamburgerIcon />
-          </Box>
-
-          <Box>
-            <Stack
-              spacing={12}
-              direction={{ base: "column", md: "row" }}
-              display={{ base: isOpen ? "block" : "none", md: "flex" }}
-              width={{ base: "full", md: "auto" }}
-              alignItems="center"
-              flexGrow={1}
-              mt={{ base: 4, md: 0 }}
-            >
-                <Text as={'a'} cursor="pointer" _hover={{ color: 'blue' }}>
-                  Section 
-                </Text>
-                <Text as={'a'} cursor="pointer" _hover={{ color: 'blue' }}>
-                  Section 
-                </Text>
-            </Stack>
-          </Box>
 
         </Flex>
       </Box>
