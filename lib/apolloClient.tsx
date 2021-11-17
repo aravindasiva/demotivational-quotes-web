@@ -18,7 +18,7 @@ function createApolloClient(ctx) {
   const httpLink = new HttpLink({
     uri: process.env.NODE_ENV === 'development'
       ? `http://${process.env.NEXT_PUBLIC_SERVER_URI}`
-      : `https://${process.env.NEXT_PUBLIC_SERVER_URI}/graphql`,
+      : `https://demotivation-quotes-api.herokuapp.com/`,
   })
 
 
