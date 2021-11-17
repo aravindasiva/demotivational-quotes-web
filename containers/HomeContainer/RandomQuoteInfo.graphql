@@ -1,0 +1,5 @@
+fragment RandomQuoteInfo on Quote {
+  id
+  quote
+  author
+}
