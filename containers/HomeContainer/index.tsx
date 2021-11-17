@@ -29,8 +29,9 @@ const HomeContainer = () => {
           <Center>
             <HStack>
               <Text textStyle={TextStyles.caption} fontSize={10} color='#d2d2d2'>Made with</Text>
-              <Icon as={FaHeartBroken} _hover={{ color: 'red' }} _focus={{ outline: 'none' }} _active={{ outline: 'none' }} boxSize={3} color='#D2D2D2' />
-              <Link href="https://github.com/aravindasiva" isExternal>
+              <Link href="/secret">
+                <Icon as={FaHeartBroken} _hover={{ color: 'red' }} _focus={{ outline: 'none' }} _active={{ outline: 'none' }} boxSize={3} color='#D2D2D2' />
+              </Link>              <Link href="https://github.com/aravindasiva" isExternal>
                 <Text textStyle={TextStyles.caption} fontSize={10} _hover={{ color: '#FF8A00' }} color='#d2d2d2'>Aravind Cva</Text>
               </Link>
             </HStack>
