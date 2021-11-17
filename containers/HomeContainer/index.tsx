@@ -1,4 +1,4 @@
-import { Box, Center, HStack } from '@chakra-ui/react'
+import { Box, Center, HStack, Icon, Link } from '@chakra-ui/react'
 import React from 'react'
 import SiteHeader from '../../components/Header'
 import DontClick from '../../components/svg/DontClick'
@@ -8,11 +8,10 @@ import Text, { TextStyles } from '../../components/Text'
 import { GetRandomQuoteDocument, useGetRandomQuoteQuery } from '../../generated/graphql-types'
 import { AnimatePresence, motion } from "framer-motion"
 import SkullShadow from '../../components/svg/SkullShadow'
+import { FaHeartBroken } from 'react-icons/fa'
 
 const HomeContainer = () => {
   const { data, loading, refetch: randomQuoteRefetch } = useGetRandomQuoteQuery()
-  console.log("🚀 ~ file: index.tsx ~ line 11 ~ HomeContainer ~ data", data?.randomQuote?.id)
-  console.log("🚀 ~ file: index.", process.env.NEXT_PUBLIC_SERVER_URI)
 
   const onDontClick = async () => {
     randomQuoteRefetch()
@@ -26,8 +25,19 @@ const HomeContainer = () => {
       </Box>
       <Box position='absolute' top={0}>
         <SiteHeader />
+        <Box w='100vw' minH={10} position='fixed' bottom={0}>
+          <Center>
+            <HStack>
+              <Text textStyle={TextStyles.caption} fontSize={10} color='#d2d2d2'>Made with</Text>
+              <Icon as={FaHeartBroken} _hover={{ color: 'red' }} _focus={{ outline: 'none' }} _active={{ outline: 'none' }} boxSize={3} color='#D2D2D2' />
+              <Link href="https://github.com/aravindasiva" isExternal>
+                <Text textStyle={TextStyles.caption} fontSize={10} _hover={{ color: '#FF8A00' }} color='#d2d2d2'>Aravind Cva</Text>
+              </Link>
+            </HStack>
+          </Center>
+        </Box>
         <Box>
-          <Box position='fixed' top='15%' right={0}>
+          <Box position='fixed' top='12%' right={0}>
             <Skull />
             <Center >
               <SkullShadow />
