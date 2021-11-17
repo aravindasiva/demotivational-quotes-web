@@ -1,7 +1,5 @@
 query GetRandomQuote {
   randomQuote {
-    id
-    quote
-    author
+    ...RandomQuoteInfo
   }
 }

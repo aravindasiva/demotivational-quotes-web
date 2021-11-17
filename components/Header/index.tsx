@@ -31,7 +31,7 @@ const SiteHeader = () => {
           color="black"
         >
           <Flex align="center" mr={2}>
-              <Text as={'a'} color='#1d1d1d' textStyle={TextStyles.title} fontSize={25} cursor="pointer" _hover={{ color: 'blue' }}>
+              <Text as={'a'} color='#1d1d1d' textStyle={TextStyles.title} fontSize={25} cursor="pointer" _hover={{ color: '#D2D2D2' }}>
                 Negative Space
               </Text>
           </Flex>
