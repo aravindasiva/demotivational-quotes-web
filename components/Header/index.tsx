@@ -3,14 +3,18 @@ import {
   Flex,
   Divider,
   Stack,
-  Text,
-  useDisclosure
+  useDisclosure,
+  HStack,
+  Icon,
+  Link,
+  LinkOverlay
 } from "@chakra-ui/react"
 import React from "react"
-import { HamburgerIcon } from "@chakra-ui/icons"
+import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai"
+import Text, { TextStyles } from "../Text"
 
 
-export const SiteHeaderHeight = 80
+export const SiteHeaderHeight = 50
 
 const SiteHeader = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -24,38 +28,31 @@ const SiteHeader = () => {
           h="100%"
           justify='space-between'
           alignItems="center"
-          pr={{ base: 4, md: 10 }}
-          pl={{ base: 4, md: 10 }}
+          mt={8}
+          pr={{ base: 4, md: 16 }}
+          pl={{ base: 4, md: 16 }}
           color="black"
         >
           <Flex align="center" mr={2}>
-              <Text as={'a'} cursor="pointer" _hover={{ color: 'blue' }}>
-                Your Logo
-              </Text>
+          <LinkOverlay href="#">
+            <Text color='#1d1d1d' textStyle={TextStyles.title} fontSize={25} cursor="pointer" _hover={{ color: '#D2D2D2' }}>
+              Negative Space
+            </Text>
+            </LinkOverlay>
           </Flex>
-
-          <Box display={{ base: "block", md: "none" }} onClick={handleToggle}>
-            <HamburgerIcon />
-          </Box>
-
-          <Box>
-            <Stack
-              spacing={12}
-              direction={{ base: "column", md: "row" }}
-              display={{ base: isOpen ? "block" : "none", md: "flex" }}
-              width={{ base: "full", md: "auto" }}
-              alignItems="center"
-              flexGrow={1}
-              mt={{ base: 4, md: 0 }}
-            >
-                <Text as={'a'} cursor="pointer" _hover={{ color: 'blue' }}>
-                  Section 
-                </Text>
-                <Text as={'a'} cursor="pointer" _hover={{ color: 'blue' }}>
-                  Section 
-                </Text>
-            </Stack>
-          </Box>
+          <Flex align="center" mr={2}>
+            <HStack spacing={6}>
+              <Link href="https://github.com/aravindasiva" isExternal>
+                <Icon as={AiFillGithub} _hover={{ color: '#FF8A00' }} _focus={{ outline: 'none' }} _active={{ outline: 'none' }} boxSize={25} color='#D2D2D2' />
+              </Link>
+              <Link href="https://www.instagram.com/aravind_cva/" isExternal>
+                <Icon as={AiFillInstagram} _hover={{ color: '#FF8A00' }} _focus={{ outline: 'none' }} boxSize={25} color='#D2D2D2' />
+              </Link>
+              <Link href="https://www.linkedin.com/in/aravindasiva/" isExternal>
+                <Icon as={AiFillLinkedin} _hover={{ color: '#FF8A00' }} _focus={{ outline: 'none' }} boxSize={25} color='#D2D2D2' />
+              </Link>
+            </HStack>
+          </Flex>
 
         </Flex>
       </Box>
