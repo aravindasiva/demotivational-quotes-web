@@ -24,7 +24,7 @@ const Custom404 = () => {
           <Link p={4} href="/">
             <Button bg='#ff8a00'>Go Home</Button>
           </Link>
-          <Box position='fixed' bottom={5}>
+          <Box zIndex={1} position='fixed' bottom={5}>
             <HStack>
               <Text textStyle={TextStyles.caption} fontSize={10} color='#d2d2d2'>Made with</Text>
               <Link href="/secret">

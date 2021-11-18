@@ -25,7 +25,7 @@ const HomeContainer = () => {
       </Box>
       <Box position='absolute' top={0}>
         <SiteHeader />
-        <Box w='100vw' minH={10} position='fixed' bottom={0}>
+        <Box zIndex={1} w='100vw' minH={10} position='fixed' bottom={0}>
           <Center>
             <HStack>
               <Text textStyle={TextStyles.caption} fontSize={10} color='#d2d2d2'>Made with</Text>
